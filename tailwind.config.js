@@ -3,7 +3,7 @@ module.exports = {
     enabled: process.env.NODE_ENV === 'production',
     content: ['index.html'],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
   },
