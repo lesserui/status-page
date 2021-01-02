@@ -8,8 +8,8 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 </head>
 <body>
-  <div x-data>
-    <header class="py-8 md:py-12">
+  <div>
+    <header class="py-8 md:py-12 mb-8">
       <div class="container flex flex-col items-center md:flex-row justify-between">
         <div class="logo mb-8 md:mb-0">
           <svg
@@ -116,7 +116,7 @@
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
-              <template x-for="i in 90">
+              <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
                 <div
                   class="bars bg-green-400 flex-1 h-10 rounded"
                 ></div>
@@ -133,7 +133,7 @@
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
-              <template x-for="i in 90">
+              <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
                 <div class="bars bg-yellow-400 flex-1 h-10 rounded"></div>
               </template>
             </div>
@@ -148,7 +148,7 @@
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
-              <template x-for="i in 90">
+              <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
                 <div
                   class="bars bg-red-400 flex-1 h-10 rounded"
                 ></div>
@@ -162,7 +162,7 @@
           Past Incidents
         </h2>
         <div class="container past-incidents">
-          <template x-for="i in 10">
+          <template x-data x-for="i in 10">
             <div class="day mt-10">
               <h4 class="border-b text-lg font-medium pb-1 mb-2 text-gray-900">
                 Aug <span x-text="i"></span>, 2020
@@ -180,5 +180,14 @@
       Powered by <span class="font-semibold text-black">Status</span>
     </footer>
   </div>
+  <script>
+    function bars() {
+      const calculate = () => Math.min(Math.floor(window.innerWidth / 10.7), 90)
+      return {
+        count: calculate(),
+        calculate,
+      }
+    }
+  </script>
 </body>
 </html>
