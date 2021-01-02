@@ -1,0 +1,24 @@
+{
+  "name": "status-page",
+  "version": "1.0.0",
+  "description": "Free Tailwind CSS Status Page Template",
+  "main": "index.js",
+  "author": "sibbng",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"yarn postcss\" \"yarn serve\"",
+    "postcss": "yarn build --watch",
+    "build": "postcss input.css --output style.css",
+    "serve": "reload -b"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.2",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "postcss-cli": "^8.3.1",
+    "reload": "^3.1.1"
+  }
+}
