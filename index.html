@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 </head>
-<body class="dark:bg-gray-900">
+<body class="dark:bg-dark">
   <div>
     <header class="py-8 md:py-12 mb-8">
       <div class="container flex flex-col items-center md:flex-row justify-between">
@@ -111,14 +111,12 @@
         <div class="monitor py-8 bg-green-400 bg-opacity-10">
           <div class="container flex items-center justify-between mb-3">
             <h3 class="text-2xl text-gray-800 dark:text-gray-100">Website</h3>
-            <span class="text-green-600 font-semibold">Operational</span>
+            <span class="text-green-600 dark:text-green-400 font-semibold">Operational</span>
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
               <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
-                <div
-                  class="bars bg-green-400 flex-1 h-10 rounded"
-                ></div>
+                <div class="bars bg-green-400 flex-1 h-10 rounded hover:opacity-90 cursor-pointer"></div>
               </template>
             </div>
           </div>
@@ -126,14 +124,14 @@
         <div class="monitor py-8 bg-yellow-500 bg-opacity-10">
           <div class="container flex items-center justify-between mb-3">
             <h3 class="text-2xl text-gray-800 dark:text-gray-100">API</h3>
-            <span class="text-yellow-600 font-semibold">
+            <span class="text-yellow-600 dark:text-yellow-400 font-semibold">
               Degraded Performance
             </span>
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
               <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
-                <div class="bars bg-yellow-400 flex-1 h-10 rounded"></div>
+                <div class="bars bg-yellow-400 flex-1 h-10 rounded hover:opacity-90 cursor-pointer"></div>
               </template>
             </div>
           </div>
@@ -141,16 +139,14 @@
         <div class="monitor py-8 bg-red-400 bg-opacity-10">
           <div class="container flex items-center justify-between mb-3">
             <h3 class="text-2xl text-gray-800 dark:text-gray-100">Webhooks</h3>
-            <span class="text-red-600 font-semibold">
+            <span class="text-red-600 dark:text-red-400 font-semibold">
               Major Outage
             </span>
           </div>
           <div class="container bars">
             <div class="flex space-x-px">
               <template x-data="bars()" x-on:resize.window="count = calculate()" x-for="i in count">
-                <div
-                  class="bars bg-red-400 flex-1 h-10 rounded"
-                ></div>
+                <div class="bars bg-red-400 flex-1 h-10 rounded hover:opacity-90 cursor-pointer"></div>
               </template>
             </div>
           </div>
@@ -162,11 +158,11 @@
         </h2>
         <div class="container past-incidents">
           <template x-data x-for="i in 10">
-            <div class="day mt-10">
-              <h4 class="border-b text-lg font-medium pb-1 mb-2 text-gray-900 dark:text-gray-300 dark:border-gray-500">
+            <div class="day mt-12">
+              <h4 class="inline-block bg-gray-100 dark:bg-gray-800 rounded-md px-2 font-medium pb-1 mb-2 text-gray-900 dark:text-gray-300">
                 Aug <span x-text="i"></span>, 2020
               </h4>
-              <div class="incidents text-gray-500">
+              <div class="incidents text-gray-500 dark:text-gray-400">
                 No incidents reported.
               </div>
             </div>

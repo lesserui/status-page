@@ -1,14 +1,18 @@
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['index.html'],
+    enabled: process.env.NODE_ENV === "production",
+    content: ["index.html"],
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: "#06070d",
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
