@@ -680,6 +680,10 @@ video {
   flex: 1 1 0%;
 }
 
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -812,6 +816,14 @@ video {
 
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 * {

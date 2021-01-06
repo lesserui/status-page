@@ -170,7 +170,7 @@
           Monitors
         </h2>
         <div class="monitors space-y-6">
-          <div class="monitor py-8 bg-green-400 bg-opacity-10">
+          <div class="monitor py-8 bg-green-400 bg-opacity-10" x-data="bars()">
             <div class="container flex items-center justify-between mb-3">
               <h3 class="text-2xl text-gray-800 dark:text-gray-100">Website</h3>
               <span class="text-green-600 dark:text-green-400 font-semibold">
@@ -180,7 +180,6 @@
             <div class="container bars">
               <div class="flex space-x-px">
                 <template
-                  x-data="bars()"
                   x-on:resize.window="count = calculate()"
                   x-for="i in count"
                 >
@@ -192,9 +191,11 @@
             </div>
             <div class="container mt-2">
               <div class="flex items-center">
+                <span class="pr-2 flex-shrink-0 text-green-500 text-xs font-semibold" x-text="count + ' days ago'"></span>
                 <div class="h-px bg-green-500 w-full"></div>
-                <span class="px-2 text-green-500 text-xs font-semibold">99.8%</span>
+                <span class="px-2 flex-shrink-0 text-green-500 text-xs font-semibold">99.8%</span>
                 <div class="h-px bg-green-500 w-full"></div>
+                <span class="pl-2 flex-shrink-0 text-green-500 text-xs font-semibold">Today</span>
               </div>
             </div>
           </div>
